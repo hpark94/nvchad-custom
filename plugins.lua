@@ -107,6 +107,11 @@ local plugins = {
   },
 
   {
+    "tpope/vim-fugitive",
+    lazy = false
+  },
+
+  {
     "Exafunction/codeium.vim",
     event = 'BufEnter',
     config = function ()
