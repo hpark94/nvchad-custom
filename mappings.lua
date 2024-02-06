@@ -4,20 +4,20 @@ local M = {}
 M.disabled = {
   n = {
     ["<leader>h"] = "",
-    ["<C-a>"] = ""
-  }
+    ["<C-a>"] = "",
+  },
 }
 
 -- Your custom mappings
 M.abc = {
   n = {
-    ["<C-n>"] = {"<cmd> Telescope <CR>", "Telescope"},
-    ["<C-s>"] = {":Telescope Files <CR>", "Telescope Files"},
+    ["<C-n>"] = { "<cmd> Telescope <CR>", "Telescope" },
+    ["<C-s>"] = { ":Telescope Files <CR>", "Telescope Files" },
   },
 
   i = {
-    ["jj"] = { "<esc>", "escape insert mode" , opts = { nowait = true }}
-  }
+    ["jj"] = { "<esc>", "escape insert mode", opts = { nowait = true } },
+  },
 }
 
 M.dap = {
@@ -25,13 +25,13 @@ M.dap = {
   n = {
     ["<leader>db"] = {
       "<cmd> DapToggleBreakpoint <CR>",
-      "Add breakpoint at line"
+      "Add breakpoint at line",
     },
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
-      "Run or continue the debugger"
-    }
-  }
+      "Run or continue the debugger",
+    },
+  },
 }
 
 return M

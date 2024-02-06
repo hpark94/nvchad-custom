@@ -1,4 +1,4 @@
-local config = require("plugins.configs.lspconfig")
+local config = require "plugins.configs.lspconfig"
 local on_attach = config.on_attach
 local capabilities = config.capabilities
 
@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 
 lspconfig.hls.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 lspconfig.tsserver.setup {
@@ -14,22 +14,22 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
   init_options = {
     preferences = {
-      disableSuggestions = true
-    }
-  }
+      disableSuggestions = true,
+    },
+  },
 }
 
 lspconfig.jdtls.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 lspconfig.pyright.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 lspconfig.texlab.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }

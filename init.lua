@@ -8,5 +8,5 @@ opt.shiftround = false
 opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
-opt.colorcolumn = '80'
+opt.colorcolumn = "80"
 opt.wrap = false

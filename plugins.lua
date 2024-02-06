@@ -6,17 +6,19 @@ local plugins = {
         "vim",
         "lua",
         "html",
-        "css", "javascript",
+        "css",
+        "javascript",
         "typescript",
         "tsx",
         "json",
-        "latex", "java",
+        "latex",
+        "java",
         "c",
         "cpp",
         "cmake",
         "haskell",
         "python",
-        "xml"
+        "xml",
       },
     },
   },
@@ -26,7 +28,7 @@ local plugins = {
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
-    end
+    end,
   },
 
   {
@@ -34,8 +36,8 @@ local plugins = {
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
       require("dapui").setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -46,14 +48,14 @@ local plugins = {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-    end
+    end,
   },
 
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require("core.utils").load_mappings("dap")
-    end
+      require("core.utils").load_mappings "dap"
+    end,
   },
 
   {
@@ -74,7 +76,7 @@ local plugins = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end
+    end,
   },
 
   {
@@ -86,41 +88,51 @@ local plugins = {
         "pyright",
         "jdtls",
         "debugpy",
+        "stylua",
         "mypy",
+        "fourmolu",
         "ruff",
         "prettier",
         "texlab",
         "typescript-language-server",
-        "eslint-lsp"
+        "eslint-lsp",
       },
     },
   },
 
   {
     "lervag/vimtex",
-    lazy=false,
-    init=function ()
-      vim.g.vimtex_view_method = 'zathura'
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = "zathura"
       vim.g.vimtex_syntax_enabled = 0
-      vim.g.vimtex_compiler_method = 'latexmk'
-    end
+      vim.g.vimtex_compiler_method = "latexmk"
+    end,
   },
 
   {
     "tpope/vim-fugitive",
-    lazy = false
+    lazy = false,
   },
 
   {
     "Exafunction/codeium.vim",
-    event = 'BufEnter',
-    config = function ()
-      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<A-j>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<A-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-    end
-  }
+    event = "BufEnter",
+    config = function()
+      vim.keymap.set("i", "<C-g>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<A-j>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<A-k>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<C-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true, silent = true })
+    end,
+  },
 }
 
 return plugins
