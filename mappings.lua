@@ -11,8 +11,8 @@ M.disabled = {
 -- Your custom mappings
 M.abc = {
   n = {
-    ["<C-n>"] = { "<cmd> Telescope <CR>", "Telescope" },
-    ["<C-s>"] = { ":Telescope Files <CR>", "Telescope Files" },
+    ["<"] = { "<<", "Indent line" },
+    [">"] = { ">>", "Indent line" },
   },
 
   i = {
