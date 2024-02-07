@@ -89,6 +89,7 @@ local plugins = {
         "jdtls",
         "debugpy",
         "stylua",
+        "marksman",
         "mypy",
         "fourmolu",
         "ruff",
@@ -131,6 +132,18 @@ local plugins = {
       vim.keymap.set("i", "<C-x>", function()
         return vim.fn["codeium#Clear"]()
       end, { expr = true, silent = true })
+    end,
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      require("core.utils").load_mappings "markdown"
     end,
   },
 }

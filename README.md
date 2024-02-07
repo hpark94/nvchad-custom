@@ -62,6 +62,10 @@ Running the command `:Codeium Auth` will open a browser for authentication.
 
 I use the `tpope/vim-fugitive` plugin for git commands.
 
+### Markdown
+
+I use the `iamcco/markdown-preview.nvim` plugin for markdown preview.
+
 ### Other Settings
 
 - Custom Mappings (see `~/.config/nvim/lua/custom/mappings.lua`)

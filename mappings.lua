@@ -34,4 +34,14 @@ M.dap = {
   },
 }
 
+M.markdown = {
+  plugin = true,
+  n = {
+    ["<leader>mp"] = {
+      "<cmd>MarkdownPreviewToggle<CR>",
+      "Toggle markdown preview",
+    },
+  },
+}
+
 return M
