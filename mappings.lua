@@ -10,11 +10,6 @@ M.disabled = {
 
 -- Your custom mappings
 M.abc = {
-  n = {
-    ["<"] = { "<<", "Indent line" },
-    [">"] = { ">>", "Indent line" },
-  },
-
   i = {
     ["jj"] = { "<esc>", "escape insert mode", opts = { nowait = true } },
   },
