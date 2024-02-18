@@ -24,6 +24,28 @@ local plugins = {
   },
 
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "haskell-language-server",
+        "black",
+        "pyright",
+        "jdtls",
+        "debugpy",
+        "stylua",
+        "marksman",
+        "mypy",
+        "fourmolu",
+        "ruff",
+        "prettier",
+        "texlab",
+        "typescript-language-server",
+        "eslint-lsp",
+      },
+    },
+  },
+
+  {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     opts = function()
@@ -48,6 +70,19 @@ local plugins = {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
+    end,
+  },
+
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = function()
+      return require "custom.configs.obsidian"
     end,
   },
 
@@ -77,28 +112,6 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "haskell-language-server",
-        "black",
-        "pyright",
-        "jdtls",
-        "debugpy",
-        "stylua",
-        "marksman",
-        "mypy",
-        "fourmolu",
-        "ruff",
-        "prettier",
-        "texlab",
-        "typescript-language-server",
-        "eslint-lsp",
-      },
-    },
   },
 
   {

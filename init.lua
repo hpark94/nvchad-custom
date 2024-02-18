@@ -10,3 +10,6 @@ opt.autoindent = true
 opt.smartindent = true
 opt.colorcolumn = "80"
 opt.wrap = false
+opt.conceallevel = 2
+opt.spelllang = { "de", "en" }
+opt.spell = true
