@@ -13,3 +13,5 @@ opt.wrap = false
 opt.conceallevel = 2
 opt.spelllang = { "de", "en" }
 opt.spell = true
+
+vim.cmd [[autocmd VimEnter * silent! au! FileExplorer *]]

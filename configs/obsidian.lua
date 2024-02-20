@@ -37,6 +37,9 @@ local opts = {
       ObsidianHighlightText = { bg = "#75662e" },
     },
   },
+  follow_url_func = function(url)
+    vim.fn.jobstart { "xdg-open", url }
+  end,
 }
 
 return opts

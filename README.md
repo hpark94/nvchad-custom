@@ -48,11 +48,6 @@ community-maintained version of `jose-elias-alvarez/null-ls.nvim`.
 The configuration settings are located in
 `~/.config/nvim/lua/custom/configs/null-ls.lua`.
 
-### Debugging
-
-Debugging is facilitated by the `mfussenegger/nvim-dap` plugin.
-I use `rcarriga/nvim-dap-ui` as the debugger's UI.
-
 ### AI-Tool
 
 I use the `Exafunction/codeium.vim` plugin for AI code completion.
@@ -66,8 +61,12 @@ I use the `tpope/vim-fugitive` plugin for git commands.
 
 I use the `iamcco/markdown-preview.nvim` plugin for markdown preview.
 
+### Obsidian
+
+I use the `epwalsh/obsidian.nvim` plugin for Obsidian.
+
 ### Other Settings
 
-- Custom Mappings (see `~/.config/nvim/lua/custom/mappings.lua`)
-- Auto open and close nvim-tree (see `~/.config/nvim/lua/custom/chadrc.lua`)
-- Custom color for comments (see `~/.config/nvim/lua/custom/chadrc.lua`)
+-   Custom Mappings (see `~/.config/nvim/lua/custom/mappings.lua`)
+-   Auto open and close nvim-tree (see `~/.config/nvim/lua/custom/chadrc.lua`)
+-   Custom color for comments (see `~/.config/nvim/lua/custom/chadrc.lua`)

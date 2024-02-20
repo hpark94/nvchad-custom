@@ -5,11 +5,15 @@ local opts = {
   sources = {
     null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.formatting.fourmolu,
-    null_ls.builtins.diagnostics.mypy,
-    null_ls.builtins.diagnostics.ruff,
-    null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.trim_whitespace,
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier.with {
+      disabled_filetypes = { "markdown" },
+    },
+    null_ls.builtins.formatting.prettier.with {
+      filetypes = { "markdown" },
+      extra_args = { "--tab-width=4" },
+    },
+    null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.stylua,
   },
   on_attach = function(client, bufnr)

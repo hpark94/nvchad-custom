@@ -24,19 +24,44 @@ local plugins = {
   },
 
   {
+    "oflisback/obsidian-bridge.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("obsidian-bridge").setup {
+        obsidian_server_address = "http://localhost:27123",
+        scroll_sync = true,
+      }
+    end,
+    event = {
+      "BufReadPre *.md",
+      "BufNewFile *.md",
+    },
+    lazy = true,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      -- Enable Netrw to make the 'gx' shortcut work
+      disable_netrw = false,
+      hijack_netrw = false,
+    },
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
         "haskell-language-server",
+        "lua-language-server",
         "black",
-        "pyright",
         "jdtls",
-        "debugpy",
         "stylua",
         "marksman",
-        "mypy",
         "fourmolu",
-        "ruff",
         "prettier",
         "texlab",
         "typescript-language-server",
@@ -54,26 +79,6 @@ local plugins = {
   },
 
   {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function()
-      local dap = require "dap"
-      local dapui = require "dapui"
-      require("dapui").setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end,
-  },
-
-  {
     "epwalsh/obsidian.nvim",
     version = "*",
     lazy = true,
@@ -84,25 +89,9 @@ local plugins = {
     opts = function()
       return require "custom.configs.obsidian"
     end,
-  },
-
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require("core.utils").load_mappings "dap"
-    end,
-  },
-
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    config = function()
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
+    config = function(_, opts)
+      require("core.utils").load_mappings "obsidian"
+      require("obsidian").setup(opts)
     end,
   },
 
