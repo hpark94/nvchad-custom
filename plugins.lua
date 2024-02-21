@@ -12,6 +12,8 @@ local plugins = {
         "tsx",
         "json",
         "latex",
+        "markdown",
+        "markdown_inline",
         "java",
         "c",
         "cpp",
@@ -19,6 +21,9 @@ local plugins = {
         "haskell",
         "python",
         "xml",
+      },
+      highlight = {
+        enable = true,
       },
     },
   },

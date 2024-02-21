@@ -5,38 +5,47 @@ local opts = {
       path = "/home/hpark/vaults/MyVault/",
     },
   },
+
   completion = {
     nvim_cmp = true,
     min_chars = 2,
   },
+
   ui = {
-    enable = true,
-    update_debounce = 200,
-    -- Define how various check-boxes are displayed
-    checkboxes = {
-      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-      ["x"] = { char = "", hl_group = "ObsidianDone" },
-      [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-      ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-    },
-    bullets = { char = "•", hl_group = "ObsidianBullet" },
-    external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
-    reference_text = { hl_group = "ObsidianRefText" },
-    highlight_text = { hl_group = "ObsidianHighlightText" },
-    tags = { hl_group = "ObsidianTag" },
-    hl_groups = {
-      -- The options are passed directly to `vim.api.nvim_set_hl()`. See `:help nvim_set_hl`.
-      ObsidianTodo = { bold = true, fg = "#f78c6c" },
-      ObsidianDone = { bold = true, fg = "#89ddff" },
-      ObsidianRightArrow = { bold = true, fg = "#f78c6c" },
-      ObsidianTilde = { bold = true, fg = "#ff5370" },
-      ObsidianBullet = { bold = true, fg = "#89ddff" },
-      ObsidianRefText = { underline = true, fg = "#c792ea" },
-      ObsidianExtLinkIcon = { fg = "#c792ea" },
-      ObsidianTag = { italic = true, fg = "#89ddff" },
-      ObsidianHighlightText = { bg = "#75662e" },
-    },
+    enable = false,
   },
+
+  new_notes_location = "current_dir",
+
+  note_id_func = function(title)
+    local suffix = ""
+    if title ~= nil then
+      suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+    else
+      for _ = 1, 4 do
+        suffix = suffix .. string.char(math.random(65, 90))
+      end
+    end
+    return tostring(os.time()) .. "-" .. suffix
+  end,
+
+  daily_notes = {
+    folder = "Tagesnotizen",
+    date_format = "%d.%m.%Y",
+    alias_format = "%d. %B %Y",
+    template = nil,
+  },
+
+  wiki_link_func = function(opts)
+    if opts.id == nil then
+      return string.format("[[%s]]", opts.label)
+    elseif opts.label ~= opts.id then
+      return string.format("[[%s|%s]]", opts.id, opts.label)
+    else
+      return string.format("[[%s]]", opts.id)
+    end
+  end,
+
   follow_url_func = function(url)
     vim.fn.jobstart { "xdg-open", url }
   end,

@@ -32,6 +32,48 @@ M.obsidian = {
       "<cmd> ObsidianOpen <CR>",
       "Open Obsidian",
     },
+    ["<leader>ob"] = {
+      "<cmd> ObsidianBacklinks <CR>",
+      "Obsidian Backlinks",
+    },
+    ["<leader>oq"] = {
+      "<cmd> ObsidianQuickSwitch <CR>",
+      "Obsidian Quick Switch",
+    },
+    ["<leader>otg"] = {
+      "<cmd> ObsidianTags <CR>",
+      "Obsidian Tags",
+    },
+    ["<leader>od"] = {
+      "<cmd> ObsidianToday <CR>",
+      "Obsidian Daily Note",
+    },
+    ["<leader>otp"] = {
+      "<cmd> ObsidianTemplate <CR>",
+      "Obsidian Templates",
+    },
+    ["<leader>os"] = {
+      "<cmd> ObsidianSearch <CR>",
+      "Obsidian Search",
+    },
+    ["<leader>ol"] = {
+      "<cmd> ObsidianLinks <CR>",
+      "Obsidian Links",
+    },
+  },
+  v = {
+    ["<leader>oll"] = {
+      "<cmd> ObsidianLink <CR>",
+      "Obsidian Link",
+    },
+    ["<leader>oln"] = {
+      "<cmd> ObsidianLinkNew <CR>",
+      "Obsidian Link New",
+    },
+    ["<leader>oe"] = {
+      "<cmd> ObsidianExtractNote <CR>",
+      "Obsidian Extract Note",
+    },
   },
 }
 
