@@ -13,6 +13,9 @@ M.abc = {
   i = {
     ["jj"] = { "<esc>", "escape insert mode", opts = { nowait = true } },
   },
+  n = {
+    ["G"] = { "Gzz", "Go to end of file", opts = { nowait = true } },
+  },
 }
 
 M.markdown = {
@@ -69,10 +72,6 @@ M.obsidian = {
     ["<leader>oln"] = {
       "<cmd> ObsidianLinkNew <CR>",
       "Obsidian Link New",
-    },
-    ["<leader>oe"] = {
-      "<cmd> ObsidianExtractNote <CR>",
-      "Obsidian Extract Note",
     },
   },
 }
