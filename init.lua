@@ -15,3 +15,5 @@ opt.termguicolors = true
 
 vim.cmd [[autocmd VimEnter * silent! au! FileExplorer *]]
 vim.cmd [[autocmd InsertEnter * norm zz]]
+vim.cmd [[au FocusGained,BufEnter * :silent! !]]
+vim.cmd [[au FocusLost,WinLeave * :silent! w]]
