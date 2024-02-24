@@ -9,9 +9,9 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 opt.colorcolumn = "80"
-opt.wrap = false
 opt.spelllang = { "de", "en" }
 opt.spell = true
+opt.termguicolors = true
 
 vim.cmd [[autocmd VimEnter * silent! au! FileExplorer *]]
 vim.cmd [[autocmd InsertEnter * norm zz]]
