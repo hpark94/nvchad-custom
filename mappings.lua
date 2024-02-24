@@ -47,6 +47,12 @@ M.general = {
     ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "kzz" : "gkzz"', "Move up", opts = { expr = true } },
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "kzz" : "gkzz"', "Move up", opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "jzz" : "gjzz"', "Move down", opts = { expr = true } },
+    ["<ScrollWheelUp>"] = { 'v:count || mode(1)[0:1] == "no" ? "2kzz" : "2gkzz"', "Move up", opts = { expr = true } },
+    ["<ScrollWheelDown>"] = {
+      'v:count || mode(1)[0:1] == "no" ? "2jzz" : "2gjzz"',
+      "Move down",
+      opts = { expr = true },
+    },
 
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
