@@ -3,9 +3,6 @@ local null_ls = require "null-ls"
 
 local opts = {
   sources = {
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.formatting.fourmolu,
-    null_ls.builtins.formatting.trim_whitespace,
     null_ls.builtins.formatting.prettier.with {
       disabled_filetypes = { "markdown" },
     },
@@ -15,6 +12,7 @@ local opts = {
     },
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.diagnostics.trail_space,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
