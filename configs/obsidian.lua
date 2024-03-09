@@ -38,11 +38,18 @@ local opts = {
     return id
   end,
 
+  templates = {
+    subdir = "Templates",
+    date_format = "%d.%m.%Y",
+    time_format = "%H:%M",
+    -- A map for custom variables, the key should be the variable and the value a function
+    substitutions = {},
+  },
+
   daily_notes = {
     folder = "Tagesnotizen",
     date_format = "%d.%m.%Y",
-    alias_format = "%d. %B %Y",
-    template = nil,
+    template = "daily.md",
   },
 
   wiki_link_func = function(opts)
@@ -57,6 +64,18 @@ local opts = {
 
   follow_url_func = function(url)
     vim.fn.jobstart { "xdg-open", url }
+  end,
+
+  note_frontmatter_func = function(note)
+    local out = { id = note.id }
+
+    if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+      for k, v in pairs(note.metadata) do
+        out[k] = v
+      end
+    end
+
+    return out
   end,
 }
 

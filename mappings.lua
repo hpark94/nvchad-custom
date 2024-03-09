@@ -165,6 +165,12 @@ M.obsidian = {
       "Obsidian Link New",
     },
   },
+  i = {
+    ["<C-z>"] = {
+      "<cmd> ObsidianTemplate <CR>",
+      "Obsidian Templates",
+    },
+  },
 }
 
 return M
