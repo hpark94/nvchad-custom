@@ -16,6 +16,7 @@ M.abc = {
 }
 
 M.markdown = {
+  plugin = true,
   n = {
     ["<leader>mp"] = {
       "<cmd> MarkdownPreviewToggle <CR>",
@@ -25,6 +26,7 @@ M.markdown = {
 }
 
 M.obsidian = {
+  plugin = true,
   n = {
     ["<leader>oo"] = {
       "<cmd> ObsidianOpen <CR>",
