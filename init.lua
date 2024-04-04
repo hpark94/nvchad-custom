@@ -11,6 +11,7 @@ opt.smartindent = true
 opt.spelllang = { "de", "en" }
 opt.scrolloff = 15
 opt.spell = true
+opt.linebreak = true
 opt.termguicolors = true
 
 vim.cmd [[autocmd VimEnter * silent! au! FileExplorer *]]
